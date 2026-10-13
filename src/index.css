@@ -1,0 +1,93 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 222 47% 5%;
+    --foreground: 210 40% 95%;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: #080C14;
+    color: #E8EDF5;
+    font-family: "Inter", system-ui, sans-serif;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #0D1421;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #1A2640;
+    border-radius: 3px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #00D4AA;
+  }
+}
+
+@layer components {
+  .glass-panel {
+    @apply bg-surface-800 border border-surface-600 rounded-xl shadow-panel;
+  }
+
+  .glass-panel-inner {
+    @apply bg-surface-700 border border-surface-500 rounded-lg;
+  }
+
+  .brand-btn {
+    @apply bg-brand text-surface-900 font-semibold px-6 py-3 rounded-lg
+           hover:bg-brand-dim active:scale-95 transition-all duration-150
+           focus:outline-none focus:ring-2 focus:ring-brand focus:ring-offset-2 focus:ring-offset-surface-800
+           disabled:opacity-40 disabled:cursor-not-allowed disabled:scale-100;
+  }
+
+  .ghost-btn {
+    @apply border border-surface-500 text-slate-300 font-medium px-4 py-2 rounded-lg
+           hover:border-brand hover:text-brand transition-all duration-150
+           focus:outline-none focus:ring-2 focus:ring-brand focus:ring-offset-2 focus:ring-offset-surface-800;
+  }
+
+  .input-field {
+    @apply w-full bg-surface-700 border border-surface-500 rounded-lg px-4 py-3
+           text-slate-100 placeholder-slate-500 text-sm
+           focus:outline-none focus:border-brand focus:ring-1 focus:ring-brand
+           transition-colors duration-150;
+  }
+
+  .tag-problem {
+    @apply inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium
+           bg-red-500/10 text-accent-red border border-red-500/20;
+  }
+
+  .tag-suggestion {
+    @apply inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium
+           bg-brand/10 text-brand border border-brand/20;
+  }
+
+  .mono {
+    font-family: "JetBrains Mono", monospace;
+  }
+
+  .glow-dot {
+    @apply w-2 h-2 rounded-full bg-brand shadow-glow-sm animate-pulse-slow;
+  }
+}
